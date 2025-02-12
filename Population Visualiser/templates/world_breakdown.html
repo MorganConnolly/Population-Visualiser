@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en-UK">
+<head>
+    <meta charset="UTF-8">
+    <title>Population Visualiser</title>
+    <link rel="stylesheet" href="static/styles.css">
+    <script src = "static/script.js"></script>
+</head>
+<body>
+    <header>
+        <h1>Morgan's Population Visualiser</h1>
+        <nav class="buttons">
+            <button type="button" onclick="transitionTo('/world_breakdown')">World Breakdown</button>
+            <button type="button" onclick="transitionTo('/country_breakdown')">Country Breakdown</button>
+        </nav>
+    </header>
+    <div id="linebreak"></div>
+    <section id="content">
+        <h2>World Population Breakdown by Country</h2>
+        <p>Data retrieved from the <a href="https://documenter.getpostman.com/view/1134062/T1LJjU52">countries & cities API</a>.</p>
+        <div class="formcontainer">
+            <form action="/world_breakdown" method="post" onsubmit="reloadPage()">
+                <label for="country">Select country:</label>
+                <select id="country" name="country">
+                    {% for country in countries %}
+                    <option value="{{ country }}">{{ country }}</option>
+                    {% endfor %}
+                </select>
+                <input class="button" type="submit" name="submit" value="Add to Graph">
+            </form>
+            <form action="/world_breakdown" method="post" onsubmit="reloadPage()">
+                <input class="button" type="submit" value="Reset Graph">
+            </form>
+        </div>
+        <img src="{{ url_for('world_breakdown_graph') }}" alt="Graph of World Population by Country">
+        <div class="populationlist">
+            <h3>Populations</h3>
+            {% for (country_name, country_population) in countries_picked %}
+            <p>{{ country_name }}: {{ country_population }}</p>
+            {% endfor %}
+        </div>
+    </section>
+</body>
+</html>

@@ -1,0 +1,3 @@
+-=-=- Morgan's Population Visualiser -=-=- 
+-=- Running the Website Locally -=- 
+- Run the Python-based API (api.py) using Flask and go to: http://127.0.0.1:8080

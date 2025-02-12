@@ -1,0 +1,76 @@
+* {
+    font-family: 'Space Mono', 'Courier New';
+    text-align: center;
+}
+
+body {
+    background-color: black;
+    color: white;
+    align-items: center;
+}
+
+header {
+    padding-top: 10vh;
+    padding-bottom: 5vh;
+}
+
+section {
+    height: 0px;
+}
+
+img {
+    max-height: 300px;
+}
+
+a {
+    text-decoration: none;
+    color: rgb(12, 158, 68);
+}
+
+a:hover {
+    color: rgb(8, 116, 49)
+}
+
+#linebreak {
+    width: 0%;
+    transition: width 1s;
+    border-top: 1px solid white;
+    margin: 0 auto;
+}
+
+#content {
+    opacity: 0;
+    transition: opacity 1s;
+}
+
+.formcontainer {
+    display: grid;
+    gap: 10px;
+    padding-bottom: 20px;
+}
+
+.populationlist {
+    display: inline-block;
+    vertical-align: top;
+    padding-left: 100px;
+    padding-right: 20px;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+select {
+    background-color: black;
+    color: white;
+    border: 1px solid grey
+}
+
+.button, button {
+    background-color: rgb(21, 21, 21);
+    border: 1px solid white;
+    color: white;
+    cursor: pointer;
+}
+
+.button:hover, button:hover {
+    background-color: rgb(74, 74, 74);
+}
